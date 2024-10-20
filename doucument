@@ -1,5 +1,3 @@
-# ACMEGRADE-Minor-Project
-
 E-commerce SAAS
 MVP Minimum value product
 USP Unique Selling product
@@ -13,27 +11,9 @@ Super Admin
     Manage Gateway of payment
     Dashboard for vender
 
-Seller/vender
-    Authentication/KYC - MVP
-        UI
-            username
-            password
-            Confirm password
-            submit
-
-        API
-            read username and password
-            insert into table
-
-        DB
-            create user table
-                user id
-                username
-                password
-                user type
-                date_stamp
-
-    Selling Login
+Seller
+    Authentication/KYC MVP
+    SellingLogin
 
     manage products  MVP
     add
@@ -72,3 +52,4 @@ Buyer/Customer
 customer Care
 Delivery partner
 Accountant
+
