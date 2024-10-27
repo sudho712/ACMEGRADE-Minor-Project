@@ -1,4 +1,7 @@
 <?php
+
+session_start();
+$_SESSION['login_status']=false;
 $host = "localhost";
 $user = "root";
 $pass = "";
@@ -21,18 +24,21 @@ $stmt->execute();
 $sql_result = $stmt->get_result();
 
 if ($sql_result->num_rows > 0) {
-    echo "Login Success";
+    //echo "Login Success";
+
+    $_SESSION['login_status']=true;
     $dbrow = $sql_result->fetch_assoc();
+    //print_r($dbrow);
 
     // Redirect based on user type
     if ($dbrow["usertype"] == "seller") {
-        header("Location: /ecom/ACMEGRADE-Minor-Project/Seller/home.html");
-    } elseif ($dbrow["usertype"] == "buyer") {
-        header("Location: /ecom/ACMEGRADE-Minor-Project/Buyer/home.html");
+        header("Location: /ecom/ACMEGRADE-Minor-Project/Seller/home.php");
+    } else if ($dbrow["usertype"] == "buyer") {
+        header("Location: /ecom/ACMEGRADE-Minor-Project/Buyer/home.php");
     }
     exit(); // Ensure script stops after header redirection
 } else {
-    echo "Invalid username/password";
+    echo "<h2>Invalid username/password</h2>";
 }
 
 // Close the prepared statement and connection

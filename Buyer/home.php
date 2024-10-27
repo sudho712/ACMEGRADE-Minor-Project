@@ -1,11 +1,16 @@
+<?php
+echo "I am execute conditions";
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vender home page</title>
+    <title>Byer home page</title>
 </head>
 <body>
-    <h1>Welcome Vender page </h1>
+    <h1>Buyer home page</h1>
 </body>
 </html>
