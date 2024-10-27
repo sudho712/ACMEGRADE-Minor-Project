@@ -1,7 +1,16 @@
 <?php
-echo "I am execute conditions";
+session_start();
+if (!isset($_SESSION["login_status"])) {
+    echo "you skipped login....";
+    echo "<a href='../shared/login.html'>Login here...</a>";
+    die;
+}
+if ($_SESSION['login_status'] == false) {
+    echo 'Unbothered Attempt';
+    echo "<br> <a href='../shared/login.html'>Login here...</a ";
+    die;
+}
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
