@@ -27,6 +27,8 @@ if ($sql_result->num_rows > 0) {
     $dbrow = $sql_result->fetch_assoc();
     print_r($dbrow);
 
+    $_SESSION['login_status'] = $dbrow['userid'];
+
     if ($dbrow["usertype"] == "seller") {
         header("Location: /ecom/ACMEGRADE-Minor-Project/Seller/home.php");
     } else if ($dbrow["usertype"] == "buyer") {
